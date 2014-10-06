@@ -3,3 +3,4 @@ target/
 *.spvchain
 *.wallet
 *.spv
+*.out

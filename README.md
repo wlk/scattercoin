@@ -18,14 +18,30 @@ It works both on main and test bitcoin network.
 
 Tool will pay the default fee (not included in this calculation)
 
+##Use cases
+I use it on the testnet like this:
+1. Generate multiple addresses (including private keys)
+2. Request [faucet](http://tpfaucet.appspot.com) to send 50BTC to any of the addresses
+3. Run the tool
+4. Each address will have more or less even number of coins
+5. Use addresses for testing
+
 ##Running
 
 ###Testnet
+```
 sbt "run-main com.wlangiewicz.btc.scattercoin.Main testnet /path/to/file/with/addresses.txt"
+```
 
 ###Main network
+```
 sbt "run-main com.wlangiewicz.btc.scattercoin.Main main /path/to/file/with/addresses.txt"
+```
 
+###Regtest network
+```
+sbt "run-main com.wlangiewicz.btc.scattercoin.Main regtest /path/to/file/with/addresses.txt"
+```
 
 ##This is how it works:
 1. Read Bitcoin private keys from input file

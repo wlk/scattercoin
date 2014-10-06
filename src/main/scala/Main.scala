@@ -51,8 +51,8 @@ class ScatterCoinMain(params: NetworkParameters, file: File) {
   printAllPublicAddresses()
   val peerGroup = setupPeerGroup(wallet)
 
+  Console.println("target balance is: " + targetBalance.toFriendlyString + "\nTotal balance is: " + wallet.getBalance.toFriendlyString)
   if(targetBalance.isGreaterThan(Coin.SATOSHI)) {
-    Console.println("target balance is: " + targetBalance.toFriendlyString)
     processTransactions()
   }
   else{
@@ -99,7 +99,10 @@ class ScatterCoinMain(params: NetworkParameters, file: File) {
       peerGroup.addPeerDiscovery(new DnsDiscovery(params))
     }
     peerGroup.startAsync
+    Console.println("Starting blockchain download")
     peerGroup.downloadBlockChain()
+    Console.println("Blockchain download done")
+
     peerGroup
   }
 
@@ -112,10 +115,6 @@ class ScatterCoinMain(params: NetworkParameters, file: File) {
     Console.println("Importing keys")
     wallet.importKeys(privateECKeys.asJava)
     Console.println("Keys Added")
-  }
-
-  def printTotalCoins(): Unit = {
-    Console.println(wallet.getBalance.toFriendlyString)
   }
 
   def printAllPublicAddresses(): Unit ={

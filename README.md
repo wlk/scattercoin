@@ -19,12 +19,12 @@ It works both on main and test bitcoin network.
 Tool will pay the default fee (not included in this calculation)
 
 ##Use cases
-I use it on the testnet like this:
-1. Generate multiple addresses (including private keys)
-2. Request [faucet](http://tpfaucet.appspot.com) to send 50BTC to any of the addresses
-3. Run the tool
-4. Each address will have more or less even number of coins
-5. Use addresses for testing
+I use it on the testnet like this:  
+1. Generate multiple addresses (including private keys)  
+2. Request [faucet](http://tpfaucet.appspot.com) to send 50BTC to any of the addresses  
+3. Run the tool  
+4. Each address will have more or less even number of coins  
+5. Use addresses for testing  
 
 ##Running
 

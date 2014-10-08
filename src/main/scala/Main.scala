@@ -37,10 +37,10 @@ object Main extends App {
 class ScatterCoinMain(params: NetworkParameters, file: File) {
   Console.println("Creating Scatter")
   private val source = Source.fromFile(file)
+
   val privateKeys: List[String] = source.getLines().toList map { //private keys in WIF format
     _.split(",")(0)
   }
-
   val privateECKeys: List[ECKey]= privateKeys map {
     key: String => addressToKey(params, key)
   }
